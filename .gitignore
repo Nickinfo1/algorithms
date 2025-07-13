@@ -1,2 +1,3 @@
 # Игнорировать папку node_modules во всех подпапках
 **/node_modules/
+**/*.swp
