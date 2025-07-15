@@ -4,6 +4,9 @@ function insertionSort(arr) {
   let key;
   for (let i = 1; i < arr.length; i++) {
     key = arr[i];
+    if (typeof arr[i] === "string") {
+      return [];
+    }
     let j = i - 1;
     while (j > -1 && arr[j] > key) {
       arr[j + 1] = arr[j];
@@ -11,8 +14,7 @@ function insertionSort(arr) {
     }
     arr[j + 1] = key;
   }
+  return [...arr];
 }
 
-const arr = [5, 3, 2, 6, 1, 4];
-insertionSort(arr);
-console.log(arr);
+module.exports = insertionSort;
